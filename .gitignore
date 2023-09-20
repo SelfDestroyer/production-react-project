@@ -255,7 +255,7 @@ fabric.properties
 .idea/**/azureSettings.xml
 
 
-build
+./dist
 
 
 # End of https://www.toptal.com/developers/gitignore/api/webstorm,node
