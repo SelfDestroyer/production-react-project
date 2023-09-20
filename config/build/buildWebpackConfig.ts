@@ -1,14 +1,14 @@
 import {IBuildOptions} from "./types/config";
 import webpack from "webpack";
-import path from "path";
 
 import {buildLoaders} from "./buildLoaders";
 import {buildResolvers} from "./buildResolvers";
 import {buildPlugins} from "./buildPlugins";
+import {buildDevServer} from "./buildDevServer";
 
 export function buildWebpackConfig(options: IBuildOptions): webpack.Configuration {
-    const {mode, paths} = options;
-
+    const {mode, paths, isDev} = options;
+    console.log(mode)
     return {
         mode,
         entry: paths.entry,
@@ -16,9 +16,13 @@ export function buildWebpackConfig(options: IBuildOptions): webpack.Configuratio
             filename: '[name].[contenthash].js',
             path: paths.build,
             clean: true
-        }, module: {
+        },
+        module: {
             rules: buildLoaders(),
-        }, resolve: buildResolvers(),
-        plugins: buildPlugins(options)
+        },
+        resolve: buildResolvers(),
+        plugins: buildPlugins(options),
+        devtool: isDev ? 'inline-source-map' : undefined,
+        devServer: isDev ? buildDevServer(options) : undefined
     }
 }
