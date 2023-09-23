@@ -1,21 +1,17 @@
-import React, {Suspense, useContext, useState} from 'react';
+import React, {Suspense} from 'react';
 import {
     Link, Route, Routes,
 } from "react-router-dom";
 import {MainPageLazy} from "./pages/MainPage/MainPage.lazy";
 import {AboutPageLazy} from "./pages/AboutPage/AboutPage.lazy";
-import {ThemeContext} from "./theme/ThemeContext";
 import {useTheme} from "./theme/useTheme";
-
-export enum Theme {
-    LIGHT = 'light', DARK = 'dark'
-}
+import {classNames} from "./helpers/classNames/classNames";
 
 const App = () => {
     const {theme, toggleTheme} = useTheme()
 
 
-    return (<div className={'app'} data-theme={theme}>
+    return (<div className={classNames('app', {}, [theme])} data-theme={theme}>
         <Link to={'/'}>Home</Link>
         <Link to={'/about'}>About</Link>
         <button onClick={toggleTheme}>Change theme</button>

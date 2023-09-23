@@ -1,6 +1,5 @@
 import React, {FC, PropsWithChildren, useMemo, useState} from 'react';
-import {LOCAL_STORAGE_THEME_KEY, ThemeContext} from "./ThemeContext";
-import {Theme} from "../App";
+import {LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext} from "./ThemeContext";
 
 const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme
 
