@@ -1,0 +1,9 @@
+$bg-color: #1E1E1E;
+$primary-color: #b49000;
+$secondary-color: #229a55;
+
+
+.app[data-theme='dark'] {
+  background: $bg-color;
+  color: $primary-color;
+}

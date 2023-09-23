@@ -1,0 +1,9 @@
+$bg-color: #F4F4F4;
+$primary-color: #2b93da;
+$secondary-color: #E74C3C;
+
+
+.app[data-theme='light'] {
+  background: $bg-color;
+  color: $primary-color;
+}
