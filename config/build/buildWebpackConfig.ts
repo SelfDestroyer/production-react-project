@@ -8,7 +8,7 @@ import {buildDevServer} from "./buildDevServer";
 
 export function buildWebpackConfig(options: IBuildOptions): webpack.Configuration {
     const {mode, paths, isDev} = options;
-    console.log(mode)
+
     return {
         mode,
         entry: paths.entry,
@@ -18,7 +18,7 @@ export function buildWebpackConfig(options: IBuildOptions): webpack.Configuratio
             clean: true
         },
         module: {
-            rules: buildLoaders(),
+            rules: buildLoaders(options),
         },
         resolve: buildResolvers(),
         plugins: buildPlugins(options),
