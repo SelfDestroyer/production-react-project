@@ -10,8 +10,7 @@ import {classNames} from "./helpers/classNames/classNames";
 const App = () => {
     const {theme, toggleTheme} = useTheme()
 
-
-    return (<div className={classNames('app', {}, [theme])} data-theme={theme}>
+    return (<div className={classNames('app', {test: true, added: true},[])} data-theme={theme}>
         <Link to={'/'}>Home</Link>
         <Link to={'/about'}>About</Link>
         <button onClick={toggleTheme}>Change theme</button>

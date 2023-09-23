@@ -1,9 +1,9 @@
-import {createRoot} from 'react-dom/client';
-import './styles/index.scss'
-import App from "./App";
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import React from "react";
+import {createRoot} from 'react-dom/client';
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import App from "./App";
 import ThemeProvider from "./theme/ThemeProvider";
+import './styles/index.scss'
 
 
 const Root = () => <ThemeProvider>
@@ -11,6 +11,5 @@ const Root = () => <ThemeProvider>
 </ThemeProvider>;
 
 const router = createBrowserRouter([{path: "*", Component: App},]);
-
 
 createRoot(document.getElementById('root')).render(<Root/>);
