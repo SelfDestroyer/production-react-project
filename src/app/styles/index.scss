@@ -1,0 +1,10 @@
+@import "reset";
+@import "variables/global";
+@import "themes/light";
+@import "themes/dark";
+
+.app {
+  font: $font-m;
+
+  min-height: 100vh ;
+}
