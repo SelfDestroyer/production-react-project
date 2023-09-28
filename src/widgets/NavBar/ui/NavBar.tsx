@@ -9,7 +9,6 @@ interface INavBarProps {
 
 export const NavBar: FC<INavBarProps> = ({}) => {
     return (<div className={classNames(cls.NavBarContainer)}>
-        <ThemeSwitcher/>
         <nav>
             <ul className={classNames(cls.NavBarItems)}>
                 <li className={classNames(cls.NavBarItem)}>
