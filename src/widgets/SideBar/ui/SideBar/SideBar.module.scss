@@ -1,12 +1,8 @@
 .SideBar {
-
   height: calc(100vh - var(--navbar-height));
   width: var(--sidebar-width-max);
-
   background: var(--inverted-bg-color);
-
   position: relative;
-
   transition: width .3s ease-in-out;
   overflow: hidden;
 }

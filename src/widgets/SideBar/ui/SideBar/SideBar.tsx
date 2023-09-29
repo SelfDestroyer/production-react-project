@@ -16,12 +16,13 @@ export const SideBar: FC<ISideBarProps> = props => {
     setCollapsed(prevState => !prevState)
   }
 
-  return (<div className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}>
-    <button type={'button'} onClick={onToggle}>toggle</button>
-    <div className={cls.switchers}>
-      <ThemeSwitcher/>
-      <LangSwitcher className={cls.LangSwitcher}/>
+  return (
+    <div className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}>
+      <button type={'button'} onClick={onToggle}>toggle</button>
+      <div className={cls.switchers}>
+        <ThemeSwitcher/>
+        <LangSwitcher className={cls.LangSwitcher}/>
+      </div>
     </div>
-  </div>
   )
 }
