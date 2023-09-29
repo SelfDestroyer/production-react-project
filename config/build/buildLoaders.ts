@@ -5,13 +5,19 @@ import {IBuildOptions} from "./types/config";
 export function buildLoaders({isDev}: IBuildOptions): webpack.RuleSetRule[] {
 
     const fileLoader = {
-        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
-        loader: 'file-loader',
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i, loader: 'file-loader',
+    }
+
+    const babelLoader = {
+        test: /\.(js|jsx|ts|tsx)$/, exclude: /node_modules/, use: {
+            loader: "babel-loader", options: {
+                presets: ['@babel/preset-env']
+            }
+        }
     }
 
     const svgLoader = {
-        test: /\.svg$/,
-        use: ['@svgr/webpack'],
+        test: /\.svg$/, use: ['@svgr/webpack'],
     }
 
     const cssLoader = {
@@ -29,5 +35,5 @@ export function buildLoaders({isDev}: IBuildOptions): webpack.RuleSetRule[] {
         test: /\.tsx?$/, use: 'ts-loader', exclude: /node_modules/,
     }
 
-    return [svgLoader, fileLoader, typescriptLoader, cssLoader]
+    return [svgLoader, fileLoader, babelLoader, typescriptLoader, cssLoader]
 }
