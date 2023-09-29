@@ -1,15 +1,13 @@
-import React from 'react';
-import {useTranslation} from "react-i18next";
+import { useTranslation } from 'react-i18next'
 
-const MainGame = () => {
-    const { t } = useTranslation();
+const MainGame = (): JSX.Element => {
+  const { t } = useTranslation()
 
-    return (
-        <div>
-            <h1>{t("Home Page")}</h1>
-        </div>
-    );
-};
+  return (
+    <div>
+      <h1>{t('Home Page')}</h1>
+    </div>
+  )
+}
 
-export default MainGame;
-
+export default MainGame
