@@ -20,7 +20,12 @@
   display: flex;
   width: 100%;
   justify-content: center;
+  align-items: center;
   padding: 15px;
   position: absolute;
   bottom: 20px;
+}
+
+.LangSwitcher {
+  margin-left: 10px;
 }
