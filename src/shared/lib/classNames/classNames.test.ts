@@ -1,4 +1,4 @@
-import { classNames } from './classNames'
+import { classNames } from 'shared/lib/classNames/classNames'
 
 describe('Testing classNames helper function', () => {
   test('Test with first argument "cls"', () => {
