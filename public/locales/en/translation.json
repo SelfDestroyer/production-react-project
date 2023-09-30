@@ -1,5 +1,8 @@
 {
   "Home Page": "Home",
-  "About Page": "About Us",
-  "language": "EN"
+  "About Page": "About us",
+  "language": "EN",
+  "Page Not Found": "Page not found",
+  "Page Error": "Something went wrong",
+  "Reload Page": "Reload Page"
 }
