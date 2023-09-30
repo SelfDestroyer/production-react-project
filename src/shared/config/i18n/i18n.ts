@@ -13,13 +13,9 @@ i18n
 
     interpolation: {
       escapeValue: false
-    },
-
-    resources: { en: { translationsNS: {} } }
-  })
-  .then(resp => resp)
-  .catch(error => {
-    console.error(error)
+    }
+  }).then(resp => resp).catch(error => {
+    console.log(error)
   })
 
 export default i18n
