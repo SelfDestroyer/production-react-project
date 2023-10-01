@@ -71,18 +71,21 @@ jobs:
         run: npm i
       - name: Run build
         run: npm run build:prod
-#  ui-test:
-#    runs-on: ubuntu-latest
-#    strategy:
-#      matrix:
-#        node-version: [ 18.x ]
-#    steps:
-#      - uses: actions/checkout@v4
-#      - name: Use Node.js ${{ matrix.node-version }}
-#        uses: actions/setup-node@v3
-#        with:
-#          node-version: ${{ matrix.node-version }}
-#      - name: Install dependencies
-#        run: npm i
-#      - name: Run ui tests
-#        run: npm run test:ui
+
+  ui-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 18.x ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm i
+      - name: Run build storybook
+        run: npm run storybook:prod
+      - name: Run screenshot-tests
+        run: npm run test:ui:ci

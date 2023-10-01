@@ -257,5 +257,7 @@ fabric.properties
 
 ./dist
 
+storybook-static
+
 
 # End of https://www.toptal.com/developers/gitignore/api/webstorm,node
