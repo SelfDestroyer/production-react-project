@@ -18,6 +18,7 @@ export const SideBar: FC<ISideBarProps> = props => {
 
   return (
     <div data-testid={'sidebar'} className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])} >
+      {/* eslint-disable-next-line i18next/no-literal-string */}
       <button type={'button'} onClick={onToggle} data-testid={'sidebar-toggle'}>toggle</button>
       <div className={cls.switchers}>
         <ThemeSwitcher/>
