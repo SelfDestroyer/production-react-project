@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 16.x, 17.x, 18.x ]
+        node-version: [ 18.x ]
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
@@ -20,12 +20,12 @@ jobs:
       - name: Install dependencies
         run: npm i
       - name: Run Stylelint
-        run: npm lint:scss
+        run: npm run lint:scss
   type-check:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [16.x, 17.x, 18.x]
+        node-version: [ 18.x]
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
@@ -35,5 +35,5 @@ jobs:
       - name: Install dependencies
         run: npm i
       - name: Run ESLint
-        run: npm lint:ts
+        run: npm run lint:ts
 
