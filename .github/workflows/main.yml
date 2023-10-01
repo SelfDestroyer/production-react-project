@@ -7,7 +7,7 @@ on:
     branches: [main]
 jobs:
   setup:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [16.x, 17.x, 18.x]
