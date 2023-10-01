@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 
-const MainGame = (): JSX.Element => {
+const MainPage = (): JSX.Element => {
   const { t } = useTranslation()
 
   return (
@@ -10,4 +10,4 @@ const MainGame = (): JSX.Element => {
   )
 }
 
-export default MainGame
+export default MainPage

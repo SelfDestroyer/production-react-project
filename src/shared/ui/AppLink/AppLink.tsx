@@ -16,7 +16,9 @@ type IAppLinkProps = {
 
 export const AppLink: FC<IAppLinkProps> = props => {
   const { children, to, className, theme = IAppLinkTheme.PRIMARY, ...otherProps } = props
-  return (<Link to={to} className={classNames(cls.AppLink, {}, [cls[theme]])} {...otherProps}>
-    {children}
-  </Link>)
+  return (
+    <Link to={to} className={classNames(cls.AppLink, {}, [cls[theme]])} {...otherProps}>
+      {children}
+    </Link>
+  )
 }

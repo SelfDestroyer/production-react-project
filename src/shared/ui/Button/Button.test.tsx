@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { Button, ThemeButton } from 'widgets/Button/Button'
+import { Button, ThemeButton } from 'shared/ui/Button/Button'
 
 describe('Test Button', () => {
   test('Test render', () => {
