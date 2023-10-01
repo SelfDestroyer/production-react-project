@@ -68,10 +68,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: npm i
-      - name: Run storybook
-        run: npm run storybook
+      - name: Run build storybook
+        run: npm run storybook:build
       - name: Run screenshot-tests
-        run: npm run test:ui
+        run: npm run test:ui:ci
 
   build:
     runs-on: ubuntu-latest
