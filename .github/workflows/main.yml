@@ -23,7 +23,7 @@ jobs:
       - name: Run Stylelint
         run: npm run lint:scss
 
-  type-check:
+  types-check:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -39,7 +39,7 @@ jobs:
       - name: Run ESLint
         run: npm run lint:ts
 
-  unit-test:
+  unit-tests:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -55,12 +55,30 @@ jobs:
       - name: Run unit tests
         run: npm run test:unit
 
+  ui-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 18.x ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm i
+      - name: Run build storybook
+        run: npm run storybook:build
+      - name: Run screenshot-tests
+        run: npm run test:ui:ci
+
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [ 18.x ]
-    needs: [lint-format, type-check, unit-test]
+    needs: [lint-format, types-check, unit-tests, ui-tests]
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
@@ -71,18 +89,3 @@ jobs:
         run: npm i
       - name: Run build
         run: npm run build:prod
-#  ui-test:
-#    runs-on: ubuntu-latest
-#    strategy:
-#      matrix:
-#        node-version: [ 18.x ]
-#    steps:
-#      - uses: actions/checkout@v4
-#      - name: Use Node.js ${{ matrix.node-version }}
-#        uses: actions/setup-node@v3
-#        with:
-#          node-version: ${{ matrix.node-version }}
-#      - name: Install dependencies
-#        run: npm i
-#      - name: Run ui tests
-#        run: npm run test:ui
