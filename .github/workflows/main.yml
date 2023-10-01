@@ -55,23 +55,6 @@ jobs:
       - name: Run unit tests
         run: npm run test:unit
 
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [ 18.x ]
-    needs: [lint-format, types-check, unit-tests]
-    steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Install dependencies
-        run: npm i
-      - name: Run build
-        run: npm run build:prod
-
   ui-tests:
     runs-on: ubuntu-latest
     strategy:
@@ -89,3 +72,20 @@ jobs:
         run: npm run storybook:build
       - name: Run screenshot-tests
         run: npm run test:ui:ci
+
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 18.x ]
+    needs: [lint-format, types-check, unit-tests, ui-tests]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm i
+      - name: Run build
+        run: npm run build:prod
