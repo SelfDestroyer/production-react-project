@@ -5,6 +5,7 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+
 jobs:
   lint-format:
     runs-on: ubuntu-latest
@@ -21,6 +22,7 @@ jobs:
         run: npm i
       - name: Run Stylelint
         run: npm run lint:scss
+
   type-check:
     runs-on: ubuntu-latest
     strategy:
@@ -36,18 +38,19 @@ jobs:
         run: npm i
       - name: Run ESLint
         run: npm run lint:ts
-    unit-test:
-      runs-on: ubuntu-latest
-      strategy:
-        matrix:
-          node-version: [ 16.x, 17.x, 18.x ]
-      steps:
-        - uses: actions/checkout@v4
-        - name: Use Node.js ${{ matrix.node-version }}
-          uses: actions/setup-node@v3
-          with:
-            node-version: ${{ matrix.node-version }}
-        - name: Install dependencies
-          run: npm i
-        - name: Run unit tests
-        - run: npm run test:unit
+
+  unit-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 16.x, 17.x, 18.x ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm i
+      - name: Run unit tests
+      - run: npm run test:unit
