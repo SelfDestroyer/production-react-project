@@ -13,7 +13,7 @@ export function buildPlugins ({ paths, isDev }: IBuildOptions): webpack.WebpackP
     }),
     new webpack.ProgressPlugin(),
     new webpack.DefinePlugin({
-      __IS_DEV__: JSON.stringify(isDev)
+      _IS_DEV_: JSON.stringify(isDev)
     })
   ]
 
