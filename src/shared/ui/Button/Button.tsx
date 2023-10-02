@@ -8,12 +8,12 @@ export enum ThemeButton {
 
 }
 
-type IButtonProps = {
+type ButtonProps = {
   className?: string
   theme?: ThemeButton
 } & ButtonHTMLAttributes<HTMLButtonElement>
 
-export const Button: FC<IButtonProps> = props => {
+export const Button: FC<ButtonProps> = props => {
   const { className = '', children, theme = '', ...otherProps } = props
 
   return (
