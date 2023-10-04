@@ -1,9 +1,9 @@
 {
   "Home Page": "Головна",
   "About Page": "Про нас",
-  "language": "UK",
+  "language": "Ukrainian",
+  "shortLanguage": "UK",
   "Page Not Found": "Сторінку не знайдено",
   "Page Error": "Щось пішло не так",
   "Reload Page": "Обновити сторінку"
-
 }

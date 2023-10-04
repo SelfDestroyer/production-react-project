@@ -1,14 +1,15 @@
 import { type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
-import { Button, ThemeButton } from 'shared/ui/Button/Button'
+import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 
 interface ILangSwitcherProps {
   className?: string
+  short?: boolean
 }
 
 export const LangSwitcher: FC<ILangSwitcherProps> = props => {
-  const { className = '' } = props
+  const { className = '', short = false } = props
   const { t, i18n } = useTranslation()
 
   const toggleLanguage = async (): Promise<void> => {
@@ -16,8 +17,8 @@ export const LangSwitcher: FC<ILangSwitcherProps> = props => {
   }
 
   return (
-    <Button onClick={toggleLanguage} theme={ThemeButton.CLEAR} className={classNames('', {}, [className])}>
-      {t('language')}
+    <Button onClick={toggleLanguage} theme={ButtonTheme.CLEAR} className={classNames('', {}, [className])}>
+      {short ? t('shortLanguage') : t('language')}
     </Button>
   )
 }
