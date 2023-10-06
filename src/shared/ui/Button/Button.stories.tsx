@@ -73,6 +73,67 @@ export const ClearDarkSizeXL: Story = {
   decorators: [ThemeDecorator(Theme.DARK)]
 }
 
+export const ClearInverted: Story = {
+  args: {
+    children: 'Button',
+    theme: ButtonTheme.CLEAR_INVERTED
+  }
+}
+export const ClearInvertedSizeM: Story = {
+  args: {
+    children: 'Button',
+    theme: ButtonTheme.CLEAR_INVERTED,
+    size: ButtonSizes.M
+  }
+}
+export const ClearInvertedSizeL: Story = {
+  args: {
+    children: 'Button',
+    theme: ButtonTheme.CLEAR_INVERTED,
+    size: ButtonSizes.L
+
+  }
+}
+export const ClearInvertedSizeXL: Story = {
+  args: {
+    children: 'Button',
+    theme: ButtonTheme.CLEAR_INVERTED,
+    size: ButtonSizes.XL
+  }
+}
+export const ClearInvertedDark: Story = {
+  args: {
+    children: 'Button',
+    theme: ButtonTheme.CLEAR_INVERTED
+  },
+  decorators: [ThemeDecorator(Theme.DARK)]
+}
+
+export const ClearInvertedDarkSizeM: Story = {
+  args: {
+    children: 'Button',
+    theme: ButtonTheme.CLEAR_INVERTED,
+    size: ButtonSizes.M
+  },
+  decorators: [ThemeDecorator(Theme.DARK)]
+}
+export const ClearInvertedDarkSizeL: Story = {
+  args: {
+    children: 'Button',
+    theme: ButtonTheme.CLEAR_INVERTED,
+    size: ButtonSizes.L
+  },
+  decorators: [ThemeDecorator(Theme.DARK)]
+}
+export const ClearInvertedDarkSizeXL: Story = {
+  args: {
+    children: 'Button',
+    theme: ButtonTheme.CLEAR_INVERTED,
+    size: ButtonSizes.XL
+  },
+  decorators: [ThemeDecorator(Theme.DARK)]
+}
+
 export const Outline: Story = {
   args: {
     children: 'Button',

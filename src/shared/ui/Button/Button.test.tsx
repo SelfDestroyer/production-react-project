@@ -12,6 +12,11 @@ describe('Test Button', () => {
     expect(screen.getByText('CLICK')).toHaveClass('clear')
   })
 
+  test('Test clear inverted theme', () => {
+    render(<Button theme={ButtonTheme.CLEAR_INVERTED}>CLICK</Button>)
+    expect(screen.getByText('CLICK')).toHaveClass('clearInverted')
+  })
+
   test('Test outline theme', () => {
     render(<Button theme={ButtonTheme.OUTLINE}>CLICK</Button>)
     expect(screen.getByText('CLICK')).toHaveClass('outline')
