@@ -30,6 +30,9 @@ const config = {
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
+  },
+  globals: {
+    _IS_DEV_: true
   }
 }
 

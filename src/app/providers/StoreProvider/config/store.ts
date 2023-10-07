@@ -1,7 +1,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { type EnhancedStore } from '@reduxjs/toolkit/src/configureStore'
 import { type StateSchema } from './stateSchema'
-import { counterReducer } from 'entities/Counter'
+import { counterReducer } from '../../../../entities/Counter/index'
 
 const rootReducer = combineReducers({
   counter: counterReducer
