@@ -14,7 +14,7 @@ export function useTheme (): IUseTheme {
 
     setTheme(newTheme)
 
-    document.body.classList.add(newTheme)
+    document.body.className = newTheme
 
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme)
   }
