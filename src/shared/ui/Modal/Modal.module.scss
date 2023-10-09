@@ -21,7 +21,7 @@
   max-width: 50%;
   padding: 20px;
   border-radius: 12px;
-  background: white;
+  background: var(--bg-color);
   transform: scale(0.5);
   transition: transform .3s ease-in-out;
 

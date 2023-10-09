@@ -261,3 +261,5 @@ storybook-static
 
 
 # End of https://www.toptal.com/developers/gitignore/api/webstorm,node
+.loki/report.html
+.loki/report.json
